@@ -1,118 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 	<head>
-		<meta charset="UTF-8">
-		<title>Hannah's Gift</title>
-
-		<link rel="stylesheet" href="a3.css">
-
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
+		<title>Main Screen</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+		<script src="js/custom.js" type="text/javascript"></script>
 	</head>
-
 	<body>
-		<ul class="nav">
-			<li class="navA"><img src="icon/home63.png" alt=""></li>	
-			<li class="navB"><img src="icon/navigation12.png" alt=""></li>
-			<li class="navC"><img src="icon/movie42.png" alt=""></li>
-			<li class="navD"><img src="icon/headphone4.png" alt=""></li>
-		</ul>
-
-		<div class="section">
-			<div class="sect intro">
-
-				<h2>Hannah's Gift</h2>
-
-				<p>3-1 game system (JavaScript, JavaServer Pages, BootStrap and Python based) Direction card game (Cassidy), Audio game (David), Video pop-up game (Tim). Content/Styling by All(target audience is Alexi. A sister of a UNC student with disabilities. We will get inputs from her (Hannah) and Hannah's mom). Main page will have the option to play any of the three games. Video Pop-Up game will have option to play three different themes (Winnie the Pooh, Percy Jackson and Harry Potter). Audio will have favorite songs. Direction card game will have pictures. The game system will use MySQL, MS Excel and text files to draw inputs from. These will be questions, answers, and links to videos. This will be used with Eye-Gaze and/or one switch operation.</p><br>
-
-
-				<h3>Software Engineers</h3>
-				<h4>David Somocurcio</h4>
-				<p>PID: 720114362</p>
-				<h4>Cassidy Helms</h4>
-				<p>PID: 720165120</p>
-				<h4>Tim Todd</h4>
-				<p>PID: 720145167</p>
-		
-			</div>
-
-			<div class="sect gameA starthidden">
-				<h2>Direction Game</h2>
-				<p>JavaScript-based with links to online sites for images</p>
-				<p>Use card directions to select next card (2-32 cards) <br>
-					-ex. “The next card is located 2 up and 3 right”</p>
-				<p>New directions given for wrong selection<br>
-					-ex. “Oops, you need to be 1 up and 1 right”</p>
-				<p>Sound or short animation after each correctly answered question</p>
-				<p>When board is cleared the board will show a picture </p>
-
-				<img class="demoPic" src="img/matchDemo.jpg" alt="">
-
-
-			</div>
-			<div class="sect gameB starthidden">
-				<h2>Video Pop-Up Game</h2>
-				<p>JavaScript program that will grab Q&amp;A from a file and videos from links.</p>
-
-				<p>Start screen will have options to play either Percy Jackson, Winnie the Pooh or Harry Potter.</p>
-
-				<p>Video will start and play for a random amount of time then stop for a Q&amp;A. After a one button switch answer it will show correct answer and then continue to play. This will happen until the video ends.</p>
-
-				<p>May incorporate a mobile version to have for her in transit use.  This version, if done, will stop the video for a few seconds to let her think about answer and then start movie again.</p>
-
-				<p>Back End Server will store the questions, answers and links.</p>
-
-				<img class="demoPic" src="img/vidpopDemo.jpg" alt="">				
-
-			</div>
-			<div class="sect gameC starthidden">
-				<h2>Audio Game</h2>
-				<p>JavaScript game that will challenge hearing abilities.</p>
-
-				<p>Objective: Player tries to find the “sources” of the background music and gain the highest score</p>
-
-				<p>Listen to audio balance of the music. If the music is louder on the right side then player will need to swipe from the right or use Eyegaze and look at the right to shift the volume to the leftward direction. Vice versa for left side.</p>
-
-				<p>Every step costs a point but finding a source will give you more points. See how high your score can go by the end of the playlist.</p>
-
-				<p>Customizable settings such as user-created playlist</p>
-
-				<p>Back End Server will store the playlist needed for the game.</p>
-
-				<img class="demoPic" src="img/audioDemo.jpg" alt="">
-
+		<div id="wrapper">
+			<div id="innerWrapper">
+				<div id="loading">Loading ...</div>
+				<div id="mainScreen">
+					<div id="title">POP-UP Video Game</div>
+					<div id="subTitle">Select A Game Below</div>
+					<div id="winnie" class="option play"><div>Winnie<br/>the<br/>Pooh</div></div>
+					<div id="harry" class="option play"><div>Harry<br/>Potter</div></div>
+					<div id="percy" class="option play"><div>Percy<br/>the<br/>Jackson</div></div>
+					<div id="back" class="option"><div>Back to<br/>Main Screen</div></div>
+				</div>
+				<div id="player"></div>
+				<div id="questions">
+					<div id="qTitle">Before you can do anything in Charms, you need to get a wand.
+					Which of the following four things does Mr. Olivander NOT say he uses as the
+					cores of his wands? (from "The Sorcerer`s Stone")</div>
+					<div class="qBox" id="answer1">Phoenix tail feathers</div>
+					<div class="qBox" id="answer2">Dragon heartstrings</div>
+					<div class="qBox" id="answer3">Unicom hairs</div>
+				</div>
+				<div id="answer"><div class="qBox" id="answerCorrect">Dragon heartstrings</div></div>
 			</div>
 		</div>
-
-
-		<!-- Navigation Functionality -->
-		<script>
-			$(".navA").click(function(){
-				$(".sect:visible").hide();
-				$(".intro").show("slow");
-				$(".section").css("background-color", "#596EF7")
-			});
-
-			$(".navB").click(function(){
-				$(".sect:visible").hide();
-				$(".gameA").show("slow");
-				$(".section").css("background-color", "#F5B445")
-			});
-
-			$(".navC").click(function(){
-				$(".sect:visible").hide();
-				$(".gameB").show("slow");
-				$(".section").css("background-color", "#F22C2C")
-			});
-			$(".navD").click(function(){
-				$(".sect:visible").hide();
-				$(".gameC").show("slow");
-				$(".section").css("background-color", "#75BA0D")
-			});
-		</script>
-
+		
 	</body>
-
 </html>

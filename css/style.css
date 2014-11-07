@@ -1,0 +1,150 @@
+body{
+    background: #212121;
+}
+#wrapper{
+    width: 100%;
+    height: 100%;
+    font-size: 36px;
+    font-weight: bold;
+}
+#innerWrapper{
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+}
+#mainScreen{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 600px;
+    background: white;
+    text-align: center;
+    z-index: 4;
+}
+#player{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+}
+#title{
+    font-size: 50px;
+    padding-top: 50px;
+}
+#subTitle{
+    font-size: 30px;
+}
+.option{
+    width: 250px;
+    height: 150px;
+    border: 3px solid black;
+    -moz-border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -khtml-border-radius: 80px;
+    border-radius: 80px;
+    vertical-align: middle;
+    display: table;
+    cursor: pointer;
+}
+.option div{
+    display: table-cell;
+    vertical-align: middle;
+}
+#winnie{
+    position: relative;
+    top: 40px;
+    left: 110px;
+    background: #00A2E8;
+}
+#harry{
+    position: relative;
+    top: 80px;
+    left: 110px;
+    background: #22B14C;
+}
+#percy{
+    position: relative;
+    top: -270px;
+    left: 430px;
+    background: #FFF200;
+}
+#back{
+    position: relative;
+    top: -230px;
+    left: 430px;
+    background: #ED1C24;
+}
+#questions{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 8;
+    background: white;
+    width: 800px;
+    height: 600px;
+    display: none;
+    background: #276596;
+    padding: 10px;
+}
+#answer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9;
+    background: white;
+    width: 800px;
+    height: 600px;
+    display: none;
+    background: #276596;
+    vertical-align: middle;
+}
+#loading{
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 600px;
+    background: white;
+    line-height: 600px;
+    vertical-align: middle;
+    text-align: center;
+}
+#qTitle{
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+}
+.qBox{
+    margin-left: 158px;
+    width: 480px;
+    height: 70px;
+    border: 3px solid black;
+    -moz-border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -khtml-border-radius: 80px;
+    border-radius: 80px;
+    vertical-align: middle;
+    display: table;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 50px;
+}
+#answer1{
+    background: #FFFF01;
+}
+#answer2{
+    background: #00AF50;
+}
+#answer3{
+    background: #FE0000;
+}
+#answerCorrect{
+    background: green;
+    position: relative;
+    top: 210px;
+    cursor: auto;
+}
